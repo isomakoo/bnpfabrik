@@ -8,8 +8,8 @@ function Home(){
     return(
         <> 
        <Hero></Hero> 
-       <Header></Header>
-        <Foother></Foother>    
+        <Header></Header>
+        <Foother></Foother>     
         
               </>
     )
