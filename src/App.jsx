@@ -1,3 +1,4 @@
+import React, { useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import 'flag-icon-css/css/flag-icons.min.css';
 import './App.css';
@@ -10,16 +11,23 @@ import Main from './Component/Main/Main';
 import Bizhaqimizda from './Component/Bizhaqimizda/Bizhaqimizda';
 import Contakt from './Component/Contakt/Contakt';
 import Tuplam from './Component/tuplam/tuplam';
+import { useTranslation } from 'react-i18next';
 
 function App() {
+  const { t } = useTranslation();
+
+  useEffect(() => {
+    document.title = t('title');
+  }, [t]);
+
   return (
     <>
       <Routes>
         <Route path="" element={<Home />} /> 
         <Route path="/product/:season/:id" element={<Main />} />
-        <Route path='/shop' element={<Tuplam></Tuplam>}/>
-        <Route path="/about-us" element={<Bizhaqimizda></Bizhaqimizda>} /> 
-        <Route path='/contact-us' element={<Contakt></Contakt>}/>
+        <Route path='/shop' element={<Tuplam />} />
+        <Route path="/about-us" element={<Bizhaqimizda />} /> 
+        <Route path='/contact-us' element={<Contakt />} />
       </Routes>
       <TelegramButton />
     </>
