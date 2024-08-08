@@ -1,0 +1,72 @@
+.tuplam-list{
+    width: 1000px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    flex-wrap: wrap;
+}
+.product-item{
+    width: 25%;
+    align-items: center;
+}
+.product-image{
+    width: 90%;
+    height: 200px;
+    border-radius: 10px;
+}
+.category-container{
+    display: flex;
+    justify-content: space-between;
+    width: 1140px;
+    margin: 0 auto;
+    padding: 0;
+}
+.contact{
+    width: 1140px;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+}
+.season-links {
+    text-align: center; 
+  }
+  
+  .season-links h2 {
+    margin-bottom: 20px; 
+  }
+  
+  .season-links button {
+    background-color: #f0f0f0; 
+    border: 1px solid #ccc; 
+    width: 100px;
+    border-radius: 5px; 
+    padding: 10px 20px;
+    margin: 5px; 
+    cursor: pointer; 
+    font-size: 16px; 
+  }
+  
+  .season-links button.active {
+    background-color: #007bff; 
+    color: #fff; 
+    border-color: #007bff; 
+  }
+  
+  .season-links button:hover {
+    background-color: #e0e0e0; 
+  }
+  .product-net{
+    width: 1000px;
+    background-color: #889a97;
+    border-radius: 10px;
+    border: 1px solid black;
+    height: 40px;
+    color: white;
+    font-weight: 500;
+    font-size: 24px;
+    text-align: center;
+  }
+  .product-nete{
+  height: 400px;
+  }

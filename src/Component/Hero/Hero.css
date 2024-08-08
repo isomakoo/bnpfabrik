@@ -1,0 +1,130 @@
+.hero{
+    width: 100%;
+    position: relative;
+    padding: 0;
+    margin: 0;
+}
+.container{
+    width: 1140px;
+    margin: 0 auto;
+    padding: 0;
+}
+.hero-logo{
+    width: 150px;
+}
+.hero-navbar{
+    width: 600px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+}
+.hero-list{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+a{
+    text-decoration: none;
+}
+a:hover{
+    color: red;
+}
+.hero-item-link{
+    font-size: 12px;
+    font-weight: 500;
+    color: rgb(103, 103, 103);
+}
+.hero-box{
+    position: relative;
+    width: 100%;
+    background-color: rgb(63, 63, 63);
+    display: flex;
+    height: 500px;
+    justify-content: space-around;
+    border-radius: 30px;
+}
+.hero-mebel1{
+    right: 180px;
+    z-index: 11;
+    width: 1100px;
+    position: absolute;
+}
+.hero-box-nav{
+    position: absolute;
+    right: 80px;
+}
+.hero-box-title{
+    top: 50px;
+    position: absolute;
+    right: -50px;
+    font-size: 38px;
+    line-height: 56px;
+    height: 50px;
+    font-weight: 600;
+    color: white;
+}
+.hero-box-text{
+    top: 80px;
+    position: absolute;
+    font-weight: 600;
+    right: -50px;
+    font-size: 64px;
+    line-height: 70px;
+    height: 80px;
+    color: white;
+}
+.hero-text{
+    top: 130px;
+    position: absolute;
+    font-weight: 700;
+    right: -80px;
+    height: 80px;
+    font-size: 94px;
+    line-height: 87px;
+    color: white;
+}
+.hero-box-list{
+    margin-top: 100px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+}
+.hero-box-item{
+    width: 25%;
+    display: flex;
+    align-items: center !important;
+    list-style: none;
+    justify-content: space-around;
+}
+.hero-box-navbar-title{
+    font-size: 14px;
+    margin: 0 !important;
+    margin-top: 15px !important;
+    line-height: 16px !important;
+    font-weight: 700;
+    color: black;
+}
+.hero-box-navbar{
+    height: 70px;
+    align-items: center;
+}
+.hero-box-navbar-text{
+    width: 180px;
+    font-size: 14px;
+    margin: 0 !important;
+    line-height: 16px !important;
+}
+.language-select {
+    width: 150px; /* Sizga kerak bo'lgan kenglik */
+  }
+  .hero .telegram-button {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1; /* Make sure the button is above other content */
+  }
+  
