@@ -16,14 +16,26 @@ function Header() {
   const summerProducts = productData.Yozgi || [];
 
   useEffect(() => {
-    AOS.init({
-      duration: 1200, // Animatsiya davomiyligi (millisekundlarda)
-    });
+    const updateAOS = () => {
+      AOS.init({
+        duration: 1200, // Animatsiya davomiyligi
+        offset: 120, // Animatsiya boshlanishi uchun masofa
+        once: true, // Bir marta faqat bajarish
+      });
+      AOS.refresh(); // AOS'ni yangilash
+    };
+
+    updateAOS();
+    window.addEventListener('resize', updateAOS);
+    return () => window.removeEventListener('resize', updateAOS);
   }, []);
+
   const navigate = useNavigate();
   const handleClick = () => {
+    window.scrollTo(0, 0);
     navigate("/shop");
   };
+
   return (
     <div className="header">
       <div className="container">

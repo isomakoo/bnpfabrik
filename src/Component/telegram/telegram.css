@@ -1,27 +1,84 @@
-.container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #f3f4f6;
-}
-
-button {
-    display: flex;
-    align-items: center;
-    padding: 10px 20px;
-    font-size: 18px;
-    color: #fff;
+.telegram-container {
+    width: 1140px;
+    margin: 0 auto; /* Markazlashtiradi */
+    position: fixed;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%); /* Elementni haqiqatdan o'rtaga olib kelish uchun */
+  }
+  
+  .telegram-button {
     background-color: #0088cc;
+    color: white;
     border: none;
     border-radius: 5px;
+    padding: 10px 20px;
     cursor: pointer;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.3s ease;
-}
-
-.icon {
-    width: 24px;
-    height: 24px;
-    margin-left: 10px;
-}
+    display: flex;
+    align-items: center;
+  }
+  
+  .telegram-icon {
+    width: 20px;
+    height: 20px;
+    margin-left: 8px;
+  }
+  
+  @media (max-width: 1100px) {
+    .telegram-container {
+      width: 1000px;
+    }
+  
+    .telegram-button {
+      padding: 10px 18px;
+      font-size: 17px;
+    }
+  
+    .telegram-icon {
+      width: 22px;
+      height: 22px;
+    }
+  }
+  
+  @media (max-width: 1000px) {
+    .telegram-container {
+      width: 900px;
+    }
+  }
+  
+  @media (max-width: 900px) {
+    .telegram-container {
+      width: 800px;
+    }
+  }
+  
+  @media (max-width: 800px) {
+    .telegram-container {
+      width: 700px;
+    }
+  }
+  
+  @media (max-width: 700px) {
+    .telegram-container {
+      width: 600px;
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .telegram-container {
+      width: 500px;
+    }
+  }
+  
+  @media (max-width: 500px) {
+    .telegram-container {
+      width: 400px;
+    }
+  }
+  
+  @media (max-width: 400px) {
+    .telegram-container {
+      width: 300px;
+    }
+  }
+  

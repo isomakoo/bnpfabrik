@@ -16,7 +16,7 @@ import { Link } from "react-router-dom";
 const languageOptions = [
   { value: "en", label: "English", icon: en },
   { value: "ru", label: "Русский", icon: ru },
-  { value: "uz", label: "O`zbekcha", icon: uz },
+  { value: "uz", label: "O`zbek", icon: uz },
 ];
 
 const customStyles = {
@@ -194,7 +194,7 @@ function Tuplam() {
                       alt={product.alt}
                       className="product-image"
                     />
-                    <p>{product.name}</p>
+                    <p className="product-text">{product.name}</p>
                   </Link>
                 </li>
               ))}

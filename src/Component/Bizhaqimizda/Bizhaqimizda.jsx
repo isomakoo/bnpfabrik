@@ -14,7 +14,7 @@ import 'aos/dist/aos.css';
 const languageOptions = [
   { value: "en", label: "English", icon: en },
   { value: "ru", label: "Русский", icon: ru },
-  { value: "uz", label: "O`zbekcha", icon: uz },
+  { value: "uz", label: "O`zbek", icon: uz },
 ];
 
 const customStyles = {

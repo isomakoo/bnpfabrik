@@ -3,6 +3,7 @@
     position: relative;
     padding: 0;
     margin: 0;
+    height: auto;
 }
 .container{
     width: 1140px;
@@ -127,8 +128,175 @@ a:hover{
     right: 20px;
     z-index: 1; /* Make sure the button is above other content */
   }
-  @media (min-width: 1100px) {
+  .custom-single-value {
+    margin-top: -35px;
+    margin-left: 10px;
+}
+.css-1uhm0ny {
+    height: 40px;
+    width: 150px;
+    padding: 0;
+}
+  @media (max-width: 1100px) {
     .container{
+        max-width: 100%;
+        height: auto;
+    }
+    .hero-list{
         width: 100%;
     }
+    .hero-mebel1{
+        width: 90%;
+    }
+    .hero-box-list{
+        padding: 0 !important;
+        width: 100%;
+        margin-top: 50px;
+    }
+    .hero-mebel1{
+        height: 650px;
+    }
   }
+  @media (max-width: 1000px) {
+  .hero-box-text, .hero-text,  .hero-box-title {
+   margin-right: -70px !important;
+  }
+  .hero-mebel1{
+    width: 90%;
+    height: 500px;
+  }
+  .hero-box{
+    height: 400px;
+  }
+  }
+  @media (max-width: 900px) {
+    .hero-box-navbar-text{
+        font-size: 10px;
+    }
+    .hero-box-navbar-title{
+        font-size: 12px;
+    }
+  }
+  @media (max-width: 800px) {
+    .hero-item:nth-child(2), .hero-item:nth-child(3), .hero-item:nth-child(4), .hero-item:nth-child(5){
+        display: none;
+    }
+     .hero-box-text{
+        font-size: 58px;
+    }
+    .hero-box-title{
+        font-size: 40px;
+    }
+    .hero-text{
+        font-size: 70px;
+    } 
+    .hero-box-list{
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        justify-content: space-between;
+    }
+    .hero-box-item{
+        width: 48%;
+     }
+    .hero-box-navbar-text{
+        font-size: 14px;
+    }
+    .hero-box-navbar-title{
+        font-size: 14px;
+    }
+  }
+  @media (max-width: 700px) {
+    
+     
+}
+  @media (max-width: 600px) {
+    .hero-mebel1{
+        width: 450px;
+        top: 30px;
+        height: 350px;
+        left: -100px;
+    }
+    .hero-box{
+        height: 300px;
+    }
+    .hero-box-text{
+        font-size: 44px;
+    }
+    .hero-box-title{
+        font-size: 38px;
+    }
+    .hero-text{
+        font-size: 54px;
+        height: 50px;
+        margin-top: 40px;
+    }
+  }
+  @media (max-width: 500px) {
+    .hero-mebel1{
+        width: 350px;
+        top: 0px;
+        height: 350px;
+        left: -50px;
+    }
+    .hero-box{
+        height: 250px;
+    }
+    .hero-box-text{
+        font-size: 30px;
+    }
+    .hero-box-title{
+        font-size: 26px;
+    }
+    .hero-text{
+        font-size: 44px;
+        height: 34px;
+        margin-top: 20px;
+        height: 40px;
+
+    }
+    .hero-logo2{
+        width: 40px;
+        height: 40px;
+    }
+  }
+  @media (max-width: 400px) {
+    .hero-mebel1{
+        width: 300px;
+        top: 20px;
+        height: 200px;
+        left: -50px;
+    }
+    .hero-logo{
+        width: 80px;
+    }
+    .hero-box{
+        height: 180px;
+    }
+    .hero-box-text{
+        font-size: 24px;
+        margin-top: 0;
+    }
+    .hero-box-title{
+        font-size: 20px;
+        margin-top: 0;
+    }
+    .hero-text{
+        font-size: 30px;
+        height: 34px;
+        margin-top: -20px;
+        height: 40px;
+    }
+    .hero-box-item{
+        width: 48%;
+    }
+    .hero-box-navbar-text{
+        width: 120px;
+        font-size: 10px;
+    }
+    .hero-box-navbar-title{
+        font-size: 12px;
+        width: 120px;
+    }
+  }
+ 

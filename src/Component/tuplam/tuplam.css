@@ -57,7 +57,7 @@
     background-color: #e0e0e0; 
   }
   .product-net{
-    width: 1000px;
+    width: 100%;
     background-color: #889a97;
     border-radius: 10px;
     border: 1px solid black;
@@ -68,5 +68,58 @@
     text-align: center;
   }
   .product-nete{
-  height: 400px;
+  height: 450px;
+  }
+  @media(max-width: 1100px){
+    .contact{
+      width: 100%;
+    }
+    .product-nete{
+      width: 80%;
+    }
+    .season-links{
+      width: 20%;
+    }
+    .category-container{
+      width: 80%;
+    }
+    .tuplam-list{
+      padding-left: 0 !important;
+    }
+    .product-item{
+      width: 24%;
+    }
+    .product-image{
+      width: 100%;
+    }
+    .product-text{
+      width: 100%;
+      text-align: left;
+      margin-left: 0;
+    }
+    
+  }
+  @media(max-width: 900px){
+   .tuplam-list{
+    flex-wrap: wrap;
+   }
+   .product-item{
+    width: 29%;
+   }
+  }
+  @media(max-width: 650px){
+    .product-item{
+      width: 48%;
+    }
+  }
+  @media(max-width: 500px){
+  .product-item{
+    width: 100%;
+  }
+  .category-container{
+    width: 66%;
+  }
+  .season-links{
+    width: 33% !important;
+  }
   }

@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import Zoom from 'react-medium-image-zoom'
+import 'react-medium-image-zoom/dist/styles.css'
 import { useParams, Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import productData from "../Product/product";
@@ -16,7 +18,7 @@ import './Main.css'
 const languageOptions = [
   { value: "en", label: "English", icon: en },
   { value: "ru", label: "Русский", icon: ru },
-  { value: "uz", label: "O`zbekcha", icon: uz },
+  { value: "uz", label: "O`zbek", icon: uz },
 ];
 
 const customStyles = {
@@ -156,46 +158,49 @@ function Main() {
       </div>
       <div className="product">
         <div className="container">
-      <div className="product-detail">
-      <div className="image-container">
-      <img src={product.img} alt={product.alt} id="product-img"   data-aos="zoom-out-right"/>
-      </div>
-        <nav data-aos="zoom-in-left">
-        <h1>{t(product.name)}</h1>
-        <p>{t("material")}: {product.material}</p>
-        <p>{t("size")}: {product.size}</p>
-        <p>{t("category")}: {product.category}</p>
-        <p>{t("manufacturer")}: {product.manufacturer}</p>
-        </nav>
-      </div>
-      <p className="product-text" data-aos="fade-up"
-     data-aos-duration="1000">{t("description")}: {product.description}</p>
-      </div>
-      <div className="container">
-      <ul className="foother-navbar">
-            <li className="foother-nav-item" data-aos="fade-zoom-in"
-     data-aos-easing="ease-in-back"
-     data-aos-delay="100"
-     data-aos-offset="0">
+          <div className="product-detail">
+            <div className="image-container">
+              <Zoom>
+                <img src={product.img} alt={product.alt} id="product-img" data-aos="zoom-out-right" />
+              </Zoom>
+            </div>
+            <table className="product-table" data-aos="zoom-in-left">
+              <tbody>
+                <tr>
+                  <th>{t("material")}</th>
+                  <td>{product.material}</td>
+                </tr>
+                <tr>
+                  <th>{t("size")}</th>
+                  <td>{product.size}</td>
+                </tr>
+                <tr>
+                  <th>{t("category")}</th>
+                  <td>{product.category}</td>
+                </tr>
+                <tr>
+                  <th>{t("manufacturer")}</th>
+                  <td>{product.manufacturer}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p className="product-text" data-aos="fade-up" data-aos-duration="1000">{t("description")}: {product.description}</p>
+        </div>
+        <div className="container">
+          <ul className="foother-navbar">
+            <li className="foother-nav-item" data-aos="fade-zoom-in" data-aos-easing="ease-in-back" data-aos-delay="100" data-aos-offset="0">
               <img src={logo} alt="Logo" className="foother-logo" />
-              <p className="foother-nav-item-text">
-                {t('about')}
-              </p>
+              <p className="foother-nav-item-text">{t('about')}</p>
             </li>
-            <li className="foother-nav-item" data-aos="fade-zoom-in"
-     data-aos-easing="ease-in-back"
-     data-aos-delay="100"
-     data-aos-offset="0">
+            <li className="foother-nav-item" data-aos="fade-zoom-in" data-aos-easing="ease-in-back" data-aos-delay="100" data-aos-offset="0">
               <h4 className="foother-nav-item-title">{t('menu')}</h4>
               <Link to="/">{t('home')}</Link> <br />
               <Link to="/">{t('aboutUs')}</Link> <br />
               <Link to="/">{t('collection')}</Link> <br />
               <Link to="/">{t('contact')}</Link>
             </li>
-            <li className="foother-nav-item" data-aos="fade-zoom-in"
-     data-aos-easing="ease-in-back"
-     data-aos-delay="100"
-     data-aos-offset="0">
+            <li className="foother-nav-item" data-aos="fade-zoom-in" data-aos-easing="ease-in-back" data-aos-delay="100" data-aos-offset="0">
               <h4 className="foother-nav-item-title">{t('contacts')}</h4>
               <p className="foother-item-nav-text">{t('address')}</p>
               <p className="foother-item-nav-text">{t('email1')}</p>
@@ -204,26 +209,22 @@ function Main() {
               <a href={`tel:${t('phone1')}`} className="foother-nav-link">{t('phone1')}</a> <br />
               <a href={`tel:${t('phone2')}`} className="foother-nav-link">{t('phone2')}</a>
             </li>
-            <li className="foother-nav-item" data-aos="fade-zoom-in"
-     data-aos-easing="ease-in-back"
-     data-aos-delay="100"
-     data-aos-offset="0">
+            <li className="foother-nav-item" data-aos="fade-zoom-in" data-aos-easing="ease-in-back" data-aos-delay="100" data-aos-offset="0">
               <h4 className="foother-nav-item-title">{t('subscribe')}</h4>
               <form className="newsletter-form">
-        <input
-          type="email"
-          placeholder="Elektron pochtangizni kiriting"
-          className="email-input"
-        />
-        <button type="submit" className="subscribe-button">
-          Obuna Bo‘ling
-        </button>
-      </form>
-              <p className="foother-item-nav-text"></p>
+                <input
+                  type="email"
+                  placeholder="Elektron pochtangizni kiriting"
+                  className="email-input"
+                />
+                <button type="submit" className="subscribe-button">
+                  Obuna Bo‘ling
+                </button>
+              </form>
             </li>
           </ul>
-          </div>
-          <div className="foother-foother">
+        </div>
+        <div className="foother-foother">
           <p className="foother-foother-text">
             {t('copyright')}
           </p>

@@ -18,7 +18,7 @@ import "../Foother/Foother.css";
 const languageOptions = [
   { value: "en", label: "English", icon: en },
   { value: "ru", label: "Русский", icon: ru },
-  { value: "uz", label: "O`zbekcha", icon: uz },
+  { value: "uz", label: "O`zbek", icon: uz },
 ];
 
 const customStyles = {
@@ -107,7 +107,7 @@ function Contakt() {
                 </Link>
               </li>
               <li className="hero-item">
-                <Link to="/" className="hero-item-link">
+                <Link to="/shop" className="hero-item-link">
                   {t("collection")}
                 </Link>
               </li>

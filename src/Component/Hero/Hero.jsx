@@ -19,7 +19,7 @@ import TelegramButton from '../telegram/telegram';
 const languageOptions = [
   { value: 'en', label: 'English', icon: en },
   { value: 'ru', label: 'Русский', icon: ru },
-  { value: 'uz', label: 'O`zbekcha', icon: uz }
+  { value: 'uz', label: 'O`zbek', icon: uz }
 ];
 
 const customStyles = {
@@ -131,28 +131,28 @@ function Hero() {
         </div>
         <ul className="hero-box-list">
           <li className="hero-box-item" data-aos="zoom-out-left">
-            <img src={logo2} alt="logo2" />
+            <img src={logo2} alt="logo2" className='hero-logo2'/>
             <nav className="hero-box-navbar">
               <p className="hero-box-navbar-title">{t('free_shipping')}</p>
               <p className="hero-box-navbar-text">{t('free_shipping_text')}</p>
             </nav>
           </li>
           <li className="hero-box-item" data-aos="zoom-out-left">
-            <img src={logo3} alt="logo3" />
+            <img src={logo3} alt="logo3" className='hero-logo2'/>
             <nav className="hero-box-navbar">
               <p className="hero-box-navbar-title">{t('return_policy')}</p>
               <p className="hero-box-navbar-text">{t('return_policy_text')}</p>
             </nav>
           </li>
           <li className="hero-box-item" data-aos="zoom-out-left">
-            <img src={logo4} alt="logo4" />
+            <img src={logo4} alt="logo4" className='hero-logo2'/>
             <nav className="hero-box-navbar">
               <p className="hero-box-navbar-title">{t('support_247')}</p>
               <p className="hero-box-navbar-text">{t('support_247_text')}</p>
             </nav>
           </li>
           <li className="hero-box-item" data-aos="zoom-out-left">
-            <img src={logo5} alt="logo5" />
+            <img src={logo5} alt="logo5" className='hero-logo2' />
             <nav className="hero-box-navbar">
               <p className="hero-box-navbar-title">{t('secure_payment')}</p>
               <p className="hero-box-navbar-text">{t('secure_payment_text')}</p>
@@ -160,7 +160,6 @@ function Hero() {
           </li>
         </ul>
       </div>
-      <TelegramButton></TelegramButton>
     </div>
   );
 }
