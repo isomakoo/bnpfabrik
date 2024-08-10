@@ -95,10 +95,11 @@ function Hero() {
   useEffect(() => {
     AOS.init({
       duration: 1000,
-      once: true, // animatsiyalar faqat bir marta ishlaydi
-      offset: 50, // ekrandan 50px masofada animatsiya boshlanadi
+      once: true,
+      offset: 50,
     });
   }, []);
+
   const [isModalOpen, setModalOpen] = useState(false);
 
   const openModal = () => {
@@ -153,12 +154,12 @@ function Hero() {
             id="hero-select"
           />
           <svg
-          onClick={openModal}
+            onClick={openModal}
             stroke="currentColor"
             fill="none"
-            stroke-width="0"
+            strokeWidth="0"
             viewBox="0 0 24 24"
-            class="open-menu"
+            className="open-menu"
             height="1em"
             width="1em"
             xmlns="http://www.w3.org/2000/svg"
