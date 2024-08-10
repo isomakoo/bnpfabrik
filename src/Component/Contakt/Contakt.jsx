@@ -13,7 +13,8 @@ import email from "../../assets/email.svg";
 import laction from "../../assets/location.svg";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import "../Foother/Foother.css";
+import { useState } from "react";
+import Modal from "../modal/modal";
 
 const languageOptions = [
   { value: "en", label: "English", icon: en },
@@ -90,6 +91,16 @@ function Contakt() {
     );
   };
 
+  const [isModalOpen, setModalOpen] = useState(false);
+
+  const openModal = () => {
+    setModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setModalOpen(false);
+  };
+
   return (
     <>
       <div className="hero">
@@ -117,8 +128,8 @@ function Contakt() {
                 </Link>
               </li>
               <li className="hero-item">
-                <Link to="/" className="hero-item-link">
-                  {t("contact")}
+                <Link to="/contact-us" className="hero-item-link">
+                  {t("contacts")}
                 </Link>
               </li>
             </ul>
@@ -132,61 +143,87 @@ function Contakt() {
               }}
               isSearchable={false}
               styles={customStyles}
+              id="hero-select"
             />
+            <svg
+              onClick={openModal}
+              stroke="currentColor"
+              fill="none"
+              strokeWidth="0"
+              viewBox="0 0 24 24"
+              className="open-menu" 
+              height="1em"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M2 5.99519C2 5.44556 2.44556 5 2.99519 5H11.0048C11.5544 5 12 5.44556 12 5.99519C12 6.54482 11.5544 6.99039 11.0048 6.99039H2.99519C2.44556 6.99039 2 6.54482 2 5.99519Z"
+                fill="currentColor"
+              ></path>
+              <path
+                d="M2 11.9998C2 11.4501 2.44556 11.0046 2.99519 11.0046H21.0048C21.5544 11.0046 22 11.4501 22 11.9998C22 12.5494 21.5544 12.9949 21.0048 12.9949H2.99519C2.44556 12.9949 2 12.5494 2 11.9998Z"
+                fill="currentColor"
+              ></path>
+              <path
+                d="M2.99519 17.0096C2.44556 17.0096 2 17.4552 2 18.0048C2 18.5544 2.44556 19 2.99519 19H15.0048C15.5544 19 16 18.5544 16 18.0048C16 17.4552 15.5544 17.0096 15.0048 17.0096H2.99519Z"
+                fill="currentColor"
+              ></path>
+            </svg>
+            <Modal isOpen={isModalOpen} onClose={closeModal} />
           </div>
           <div className="contact-list">
-            <nav className="contact-item" >
-              <h3 className="contact-title">Aloqa</h3>
+            <nav className="contact-item">
+              <h3 className="contact-title">{t('contact.title')}</h3>
               <form className="contact-input-container">
                 <input
                   type="email"
                   required
-                  className="contact-input"
-                  placeholder="Sizning elektron manzilingiz"
-                />{" "}
+                  className="contacts-input"
+                  placeholder={t('contact.email_placeholder')}
+                />
                 <br />
                 <input
                   type="tel"
-                  className="contact-input"
-                  placeholder="Telefon raqamingiz"
-                />{" "}
+                  className="contacts-input"
+                  placeholder={t('contact.phone_placeholder')}
+                />
                 <br />
                 <input
                   type="text"
                   required
-                  className="contact-input-text"
-                  placeholder="Sizning xabaringiz shu yerda"
-                />{" "}
+                  className="contacts-input-text"
+                  placeholder={t('contact.message_placeholder')}
+                />
                 <br />
-                <button className="contact-btn">Submit</button>
+                <button className="contact-btn">{t('contact.submit_button')}</button>
               </form>
             </nav>
             <iframe
               title="Bukhara Natural Product Map"
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d484413.1768652228!2d64.5298351514944!3d39.77318183514678!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f3d8cf9ddfc54b1%3A0x1d72bdf7d151f24!2z0JrQvtC-0LLQvtCz0LDRjCDQkNHRt9C-0JLQvtC-0LLQ!5e0!3m2!1sen!2s!4v1631123456789"
-               className="contact-kart"
+              className="contact-kart"
               style={{ border: 0 }}
-              allowFullScreen=""
+              allowFullScreen
               loading="lazy"
             ></iframe>
           </div>
           <ul className="contact-navbar">
             <li className="contact-items">
-              <img src={email} alt="rasm" className="contact-img" />
-              <a href="email:bnpfabric@gmail.com" className="contact-link">
+              <img src={email} alt="email" className="contact-img" />
+              <a href="mailto:bnpfabric@gmail.com" className="contact-link">
                 <span className="span-title">Email:</span>
                 Infobnpfabric@gmail.com
               </a>
             </li>
             <li className="contact-items">
-              <img src={tel} alt="rasm" className="contact-img" />
+              <img src={tel} alt="phone" className="contact-img" />
               <a href="tel:+998933837585" className="contact-link">
                 <span className="span-title">Tel:</span>+998 93 383 75 85
               </a>
             </li>
             <li className="contact-items">
-              <img src={laction} alt="rasm" className="contact-img" />
-              <a href="email:bnpfabric@gmail.com" className="contact-link">
+              <img src={laction} alt="location" className="contact-img" />
+              <a href="mailto:bnpfabric@gmail.com" className="contact-link">
                 <span className="span-title">Manzil:</span>Buxoro, st alpomish
                 80 uy
               </a>
@@ -214,7 +251,7 @@ function Contakt() {
               <Link to="/">{t("home")}</Link> <br />
               <Link to="/shop">{t("aboutUs")}</Link> <br />
               <Link to="/about-us">{t("collection")}</Link> <br />
-              <Link to="/contact-us">{t("contact")}</Link>
+              <Link to="/contact-us">{t("contacts")}</Link>
             </li>
             <li
               className="foother-nav-item"
@@ -254,7 +291,6 @@ function Contakt() {
                   Obuna Bo‘ling
                 </button>
               </form>
-              <p className="foother-item-nav-text"></p>
             </li>
           </ul>
         </div>

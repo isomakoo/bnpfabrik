@@ -7,7 +7,7 @@ const resources = {
       "home": "Home",
       "collection": "Collection",
       "about_us": "About Us",
-      "contact": "Contact",
+      "contacts": "Contact",
       "free_shipping": "Free Shipping",
       "free_shipping_text": "Free shipping on all orders",
       "return_policy": "Return Policy",
@@ -77,16 +77,36 @@ const resources = {
   "subscribe": "Subscribe to our newsletter",
   "subscribeBtn": "Subscribe",
   "copyright": "© 2024 MChJ 'BUXORA NATURAL PRODUCT'. All rights reserved.",
-  "title": "Home - LLC \"BUKHARA NATURAL PRODUCT\""
-      
-    }
+  "title": "Home - LLC \"BUKHARA NATURAL PRODUCT\"",
+  "company_name": "Bukhara Natural Product",
+  "description": {
+    "para1": "Bukhara fabrics, eco bags. Our factory has been producing cotton fabrics for use around the world for many years.",
+    "para2": "This company has been serving customers for 17 years.",
+    "para3": "The main goal of this company is to produce high-quality and cost-effective products.",
+    "para4": "The manufacturing process of this company is completely environmentally friendly.",
+    "para5": "Based on customer demands and offers, any type of cotton raw material can be produced at the enterprise.",
+    "para6": "The company is the official dealer of DongJia weaving machines in Uzbekistan.",
+    "para7": "Currently, more than 80 families are financially supported by the enterprise and contribute to its reputation and success.",
+    "para8": "To meet the demand, 50 weaving looms are continuously operating at high speed.",
+    "para9": "We have the capacity to weave 200-250 thousand meters of fabric per month.",
+    "para10": "Due to high demand from our customers, high-quality eco-bags are produced at the enterprise.",
+    "para11": "The company 'Bukhara Natural Product' is pleased to serve its loyal customers at any time."
+  },
+  "contact": {
+    "title": "Contact",
+    "email_placeholder": "Your email address",
+    "phone_placeholder": "Your phone number",
+    "message_placeholder": "Your message here",
+    "submit_button": "Submit"
+  }
+}
   },
   uz: {
     translation: {
       "home": "Bosh sahifa",
       "collection": "Kolleksiya",
       "about_us": "Biz haqimizda",
-      "contact": "Aloqa",
+      "contacts": "Aloqa",
       "free_shipping": "Bepul yetkazib berish",
       "free_shipping_text": "Har qanday buyurtma uchun bepul yetkazib berish",
       "return_policy": "Qaytarish siyosati",
@@ -156,7 +176,29 @@ const resources = {
   "subscribe": "Elektron pochtamizga obuna bo'ling",
   "subscribeBtn": "Obuna Bo'ling",
   "copyright": "© 2024 MChJ \"BUXORA NATURAL PRODUCT\". Barcha huquqlar himoyalangan.",
-  "title": "Bosh-sahifa - MCHJ \"BUXARA NATURAL PRODUCT\""
+  "title": "Bosh-sahifa - MCHJ \"BUXARA NATURAL PRODUCT\"",
+  "company_name": "Bukhara Natural Product",
+  "company_name": "Buxoro tabiiy mahsuloti",
+  "description": {
+    "para1": "Buxoro matolari, Eko sumkalar. Fabrikamız ko'p yillar davomida butun dunyoda foydalanish uchun paxta matolarini ishlab chiqaradigan kompaniya bo'lib kelgan.",
+    "para2": "Ushbu kompaniya 17 yildan beri mijozlarga xizmat ko'rsatadi.",
+    "para3": "Kompaniyaning asosiy maqsadi yuqori sifatli va tejamkor mahsulotlar ishlab chiqarishdir.",
+    "para4": "Kompaniyaning ishlab chiqarish jarayoni butunlay ekologik toza.",
+    "para5": "Xaridorlarning talab va takliflariga asoslanib, korxonada har qanday turdagi paxta xomashyosi ishlab chiqarilishi mumkin.",
+    "para6": "Kompaniya DongJia to‘quv mashinalarining O‘zbekistondagi rasmiy dileri hisoblanadi.",
+    "para7": "Ayni paytda 80 dan ortiq oila o‘z oilasini moddiy jihatdan ta’minlab, korxona nufuzi va muvaffaqiyatiga hissa qo‘shmoqda.",
+    "para8": "Talabni qondirish uchun 50 ta to‘quv dastgohi to‘xtovsiz yuqori tezlikda ishlamoqda.",
+    "para9": "Oyiga 200-250 ming metr gazlama to‘qish quvvatiga egamiz.",
+    "para10": "Mijozlarimizning yuqori talabidan kelib chiqib, korxonada yuqori sifatli eko-sumkalar ishlab chiqarish yo‘lga qo‘yildi.",
+    "para11": "“Buxoro tabiiy mahsuloti” kompaniyasi oʻz sodiq mijozlariga istalgan vaqtda xizmat koʻrsatishdan mamnun."
+  },
+  "contact": {
+    "title": "Aloqa",
+    "email_placeholder": "Sizning elektron manzilingiz",
+    "phone_placeholder": "Telefon raqamingiz",
+    "message_placeholder": "Sizning xabaringiz shu yerda",
+    "submit_button": "Yuborish"
+  }
     }
   },
   ru: {
@@ -164,7 +206,7 @@ const resources = {
       "home": "Дом",
       "collection": "Коллекция",
       "about_us": "О нас",
-      "contact": "Контакт",
+      "contacts": "Контакт",
       "free_shipping": "Бесплатная доставка",
       "free_shipping_text": "Бесплатная доставка для всех заказов",
       "return_policy": "Гарантия возврата",
@@ -234,7 +276,28 @@ const resources = {
   "subscribe": "Подпишитесь на нашу рассылку",
   "subscribeBtn": "Подписаться",
   "copyright": "© 2024 MChJ \"BUXORA NATURAL PRODUCT\". Все права защищены.",
-  "title": "Главная страница - ООО \"БУХАРА НАТУРАЛ ПРОДУКТ\""
+  "title": "Главная страница - ООО \"БУХАРА НАТУРАЛ ПРОДУКТ\"",
+  "company_name": "Бухарский натуральный продукт",
+  "description": {
+    "para1": "Бухарские ткани, экосумки. Наша фабрика уже много лет производит хлопковые ткани для использования по всему миру.",
+    "para2": "Эта компания обслуживает клиентов уже 17 лет.",
+    "para3": "Основная цель компании - производить высококачественную и экономичную продукцию.",
+    "para4": "Процесс производства компании полностью экологически чистый.",
+    "para5": "На основе требований и предложений клиентов на предприятии может быть произведен любой вид хлопкового сырья.",
+    "para6": "Компания является официальным дилером ткацких машин DongJia в Узбекистане.",
+    "para7": "В настоящее время более 80 семей обеспечивают финансовую поддержку предприятия и способствуют его репутации и успеху.",
+    "para8": "Для удовлетворения спроса 50 ткацких станков непрерывно работают на высокой скорости.",
+    "para9": "У нас есть возможность ткать 200-250 тысяч метров ткани в месяц.",
+    "para10": "Из-за высокого спроса со стороны наших клиентов на предприятии производятся качественные экосумки.",
+    "para11": "Компания 'Бухарский натуральный продукт' рада обслуживать своих преданных клиентов в любое время."
+  },
+  "contact": {
+    "title": "Контакт",
+    "email_placeholder": "Ваш адрес электронной почты",
+    "phone_placeholder": "Ваш номер телефона",
+    "message_placeholder": "Ваше сообщение здесь",
+    "submit_button": "Отправить"
+  }
     }
   }
 };

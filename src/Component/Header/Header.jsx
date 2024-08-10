@@ -16,18 +16,12 @@ function Header() {
   const summerProducts = productData.Yozgi || [];
 
   useEffect(() => {
-    const updateAOS = () => {
-      AOS.init({
-        duration: 1200, // Animatsiya davomiyligi
-        offset: 120, // Animatsiya boshlanishi uchun masofa
-        once: true, // Bir marta faqat bajarish
-      });
-      AOS.refresh(); // AOS'ni yangilash
-    };
-
-    updateAOS();
-    window.addEventListener('resize', updateAOS);
-    return () => window.removeEventListener('resize', updateAOS);
+    AOS.init({
+      duration: 1200, // Animatsiya davomiyligi
+      offset: 120, // Animatsiya boshlanishi uchun masofa
+      once: true, // Bir marta faqat bajarish
+    });
+    AOS.refresh(); // AOS'ni yangilash
   }, []);
 
   const navigate = useNavigate();
@@ -39,7 +33,7 @@ function Header() {
   return (
     <div className="header">
       <div className="container">
-        <div className="header-list" data-aos="zoom-out">
+        <div className="header-list" data-aos="fade-up">
           <h2 className="header-list-titles">
             <span className="titles-span">100%</span> <br />
             {t("header_material_quality")}
@@ -48,7 +42,7 @@ function Header() {
             src={mebel2}
             alt="Mebel2"
             className="header-mebel2"
-            data-aos="zoom-out-down"
+            data-aos="fade-down"
           />
           <nav className="header-list-nav">
             <h2 className="header-list-title">"Buxoro Tabiiy Mahsuloti"</h2>
@@ -58,14 +52,16 @@ function Header() {
             </button>
           </nav>
         </div>
-        <h2 className="header-title">{t("header_winter_collection")}</h2>
+        <h2 className="header-title" data-aos="fade-in">
+          {t("header_winter_collection")}
+        </h2>
         <p className="header-text">Buxoro tabiiy mahsuloti</p>
         <ul className="header-navbar">
           {winterProducts.map((item) => (
             <li
               className="header-item"
               key={`Qish-${item.id}`}
-              data-aos="zoom-out-left"
+              data-aos="fade-in"
             >
               <Link to={`/product/Qish/${item.id}`}>
                 <img src={item.img} alt={item.alt} className="header-logo" />
@@ -75,7 +71,7 @@ function Header() {
           ))}
         </ul>
 
-        <div className="header-list-kuz" data-aos="zoom-out">
+        <div className="header-list-kuz" data-aos="fade-up">
           <h2 className="header-list-titles">
             <span className="titles-span">100%</span> <br />
             {t("header_material_quality")}
@@ -84,7 +80,7 @@ function Header() {
             src={spalni3}
             alt="Mebel2"
             className="header-mebel2"
-            data-aos="zoom-out-down"
+            data-aos="fade-down"
           />
           <nav className="header-list-nav">
             <h2 className="header-list-title">"Buxoro Tabiiy Mahsuloti"</h2>
@@ -94,14 +90,16 @@ function Header() {
             </button>
           </nav>
         </div>
-        <h2 className="header-title">{t("header_autumn_collection")}</h2>
+        <h2 className="header-title" data-aos="fade-in">
+          {t("header_autumn_collection")}
+        </h2>
         <p className="header-text">Buxoro tabiiy mahsuloti</p>
         <ul className="header-navbar">
           {fallProducts.map((item) => (
             <li
               className="header-item"
               key={`Kuz-${item.id}`}
-              data-aos="zoom-out-left"
+              data-aos="fade-in"
             >
               <Link to={`/product/Kuz/${item.id}`}>
                 <img src={item.img} alt={item.alt} className="header-logo" />
@@ -111,7 +109,7 @@ function Header() {
           ))}
         </ul>
 
-        <div className="header-list-yozgi" data-aos="zoom-out">
+        <div className="header-list-yozgi" data-aos="fade-up">
           <h2 className="header-list-titles">
             <span className="titles-span">100%</span> <br />
             {t("header_material_quality")}
@@ -120,7 +118,7 @@ function Header() {
             src={spalni2}
             alt="Mebel2"
             className="header-mebel2"
-            data-aos="zoom-out-down"
+            data-aos="fade-down"
           />
           <nav className="header-list-nav">
             <h2 className="header-list-title">"Buxoro Tabiiy Mahsuloti"</h2>
@@ -130,14 +128,16 @@ function Header() {
             </button>
           </nav>
         </div>
-        <h2 className="header-title">{t("header_summer_collection")}</h2>
+        <h2 className="header-title" data-aos="fade-in">
+          {t("header_summer_collection")}
+        </h2>
         <p className="header-text">Buxoro tabiiy mahsuloti</p>
         <ul className="header-navbar">
           {summerProducts.map((item) => (
             <li
               className="header-item"
               key={`Yozgi-${item.id}`}
-              data-aos="zoom-out-left"
+              data-aos="fade-in"
             >
               <Link to={`/product/Yozgi/${item.id}`}>
                 <img src={item.img} alt={item.alt} className="header-logo" />

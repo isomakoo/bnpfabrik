@@ -11,7 +11,6 @@ function Home(){
        <Hero></Hero> 
          <Header></Header>
         <Foother></Foother> 
-        {/* <TelegramButton></TelegramButton>   */}
          </>
     )
 }

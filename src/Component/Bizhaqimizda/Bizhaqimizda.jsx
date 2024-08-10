@@ -11,6 +11,8 @@ import '../Foother/Foother.css'
 import Group1  from "../../assets/group1.png";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import Modal from "../modal/modal";
+import { useState } from "react";
 const languageOptions = [
   { value: "en", label: "English", icon: en },
   { value: "ru", label: "Русский", icon: ru },
@@ -85,6 +87,16 @@ function Bizhaqimizda() {
       </div>
     );
   };
+  const [isModalOpen, setModalOpen] = useState(false);
+
+  const openModal = () => {
+      setModalOpen(true);
+  };
+
+  const closeModal = () => {
+      setModalOpen(false);
+  };
+
 
   return (
     <>
@@ -114,7 +126,7 @@ function Bizhaqimizda() {
               </li>
               <li className="hero-item">
                 <Link to="/contact-us" className="hero-item-link">
-                  {t("contact")}
+                  {t("contacts")}
                 </Link>
               </li>
             </ul>
@@ -128,70 +140,52 @@ function Bizhaqimizda() {
               }}
               isSearchable={false}
               styles={customStyles}
+              id="hero-select"
             />
+            <svg
+          onClick={openModal}
+           className="hero-btn"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="0"
+            viewBox="0 0 24 24"
+            class="open-menu"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M2 5.99519C2 5.44556 2.44556 5 2.99519 5H11.0048C11.5544 5 12 5.44556 12 5.99519C12 6.54482 11.5544 6.99039 11.0048 6.99039H2.99519C2.44556 6.99039 2 6.54482 2 5.99519Z"
+              fill="currentColor"
+            ></path>
+            <path
+              d="M2 11.9998C2 11.4501 2.44556 11.0046 2.99519 11.0046H21.0048C21.5544 11.0046 22 11.4501 22 11.9998C22 12.5494 21.5544 12.9949 21.0048 12.9949H2.99519C2.44556 12.9949 2 12.5494 2 11.9998Z"
+              fill="currentColor"
+            ></path>
+            <path
+              d="M2.99519 17.0096C2.44556 17.0096 2 17.4552 2 18.0048C2 18.5544 2.44556 19 2.99519 19H15.0048C15.5544 19 16 18.5544 16 18.0048C16 17.4552 15.5544 17.0096 15.0048 17.0096H2.99519Z"
+              fill="currentColor"
+            ></path>
+          </svg>
+            <Modal isOpen={isModalOpen} onClose={closeModal} />
           </div>
-          <div className="haqimizda-list" >
-            <nav className="haqimisda-item" >
-              <h3 className="haqimizda-title">Buxoro tabiiy mahsuloti</h3>
-              <p className="haqimizda-text">
-                Buxoro matolari, Eko sumkalar, Buxoro matolari, Eko
-                sumkalarFabrikamız ko'p yillar davomida butun dunyoda
-                foydalanish uchun paxta matolarini ishlab chiqaradigan kompaniya
-                bo'lib kelgan
-              </p>
-              <p className="haqimizda-text">
-                Buxoro matolari, Eko sumkalar, Buxoro matolari, Eko
-                sumkalarUshbu kompaniya 17 yildan beri mijozlarga xizmat
-                ko'rsatadi.
-              </p>
-              <p className="haqimizda-text">
-                Buxoro matolari, Eko sumkalar, Buxoro matolari, Eko
-                sumkalarUshbu kompaniyaning asosiy maqsadi yuqori sifatli va
-                tejamkor mahsulotlar ishlab chiqarishdir.
-              </p>
-              <p className="haqimizda-text">
-                Buxoro matolari, Eko sumkalar, Buxoro matolari, Eko
-                sumkalarUshbu kompaniyaning ishlab chiqarish jarayoni butunlay
-                ekologik toza.
-              </p>
-              <p className="haqimizda-text">
-                Buxoro matolari, Eko sumkalar, Buxoro matolari, Eko
-                sumkalarKorxonada xaridorlarning talab va takliflari asosida har
-                qanday turdagi paxta xomashyosi ishlab chiqarilishi mumkin.
-              </p>
-              <p className="haqimizda-text">
-                Buxoro matolari, Eko sumkalar, Buxoro matolari, Eko
-                sumkalarKompaniya DongJia to‘quv mashinalarining O‘zbekistondagi
-                rasmiy dileri hisoblanadi.
-              </p>
-              <p className="haqimizda-text">
-                Buxoro matolari, Eko sumkalar, Buxoro matolari, Eko sumkalarAyni
-                paytda 80 dan ortiq oila o‘z oilasini moddiy jihatdan ta’minlab,
-                korxona nufuzi va muvaffaqiyatiga hissa qo‘shmoqda.
-              </p>
-              <p className="haqimizda-text">
-                Buxoro matolari, Eko sumkalar, Buxoro matolari, Eko sumkalarBu
-                talabni qondirish uchun 50 ta to‘quv dastgohi to‘xtovsiz yuqori
-                tezlikda ishlamoqda.
-              </p>
-              <p className="haqimizda-text">
-                Buxoro matolari, Eko sumkalar, Buxoro matolari, Eko
-                sumkalarOyiga 200-250 ming metr gazlama to‘qish quvvatiga egamiz
-              </p>
-              <p className="haqimizda-text">
-                Buxoro matolari, Eko sumkalar, Buxoro matolari, Eko
-                sumkalarMijozlarimizning yuqori talabidan kelib chiqib,
-                korxonada yuqori sifatli yuqori sifatli eko-sumkalar ishlab
-                chiqarish yo‘lga qo‘yild
-              </p>
-              <p className="haqimizda-text">
-                Buxoro matolari, Eko sumkalar, Buxoro matolari, Eko
-                sumkalar“Bukhara Natural Product” kompaniyasi oʻz sodiq
-                mijozlariga istalgan vaqtda xizmat koʻrsatishdan mamnun.
-              </p>
-            </nav>
-            <img src={Group1} alt="rasm" className="haqimizda-img" />
-          </div>
+          <div className="haqimizda-list">
+      <nav className="haqimisda-item">
+        <h3 className="haqimizda-title">{t('company_name')}</h3>
+        <p className="haqimizda-text">{t('description.para1')}</p>
+        <p className="haqimizda-text">{t('description.para2')}</p>
+        <p className="haqimizda-text">{t('description.para3')}</p>
+        <p className="haqimizda-text">{t('description.para4')}</p>
+        <p className="haqimizda-text">{t('description.para5')}</p>
+        <p className="haqimizda-text">{t('description.para6')}</p>
+        <p className="haqimizda-text">{t('description.para7')}</p>
+        <p className="haqimizda-text">{t('description.para8')}</p>
+        <p className="haqimizda-text">{t('description.para9')}</p>
+        <p className="haqimizda-text">{t('description.para10')}</p>
+        <p className="haqimizda-text">{t('description.para11')}</p>
+      </nav>
+      <img src={Group1} alt="rasm" className="haqimizda-img" />
+    </div>
           <ul className="foother-navbar">
             <li className="foother-nav-item" data-aos="fade-zoom-in"
      data-aos-easing="ease-in-back"
@@ -208,9 +202,9 @@ function Bizhaqimizda() {
      data-aos-offset="0">
               <h4 className="foother-nav-item-title">{t('menu')}</h4>
               <Link to="/">{t('home')}</Link> <br />
-              <Link to="/">{t('aboutUs')}</Link> <br />
-              <Link to="/">{t('collection')}</Link> <br />
-              <Link to="/">{t('contact')}</Link>
+              <Link to="/shop">{t('aboutUs')}</Link> <br />
+              <Link to="/about-us">{t('collection')}</Link> <br />
+              <Link to="/contact-us">{t('contacts')}</Link>
             </li>
             <li className="foother-nav-item" data-aos="fade-zoom-in"
      data-aos-easing="ease-in-back"

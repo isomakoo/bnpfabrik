@@ -136,6 +136,14 @@ a:hover{
     height: 40px;
     width: 150px;
     padding: 0;
+    margin-top: 0 !important;
+}
+.hero-btn{
+    width: 120px !important;
+    display: none;
+}
+.open-menu{
+    width: 50px !important;
 }
   @media (max-width: 1100px) {
     .container{
@@ -181,6 +189,9 @@ a:hover{
     .hero-item:nth-child(2), .hero-item:nth-child(3), .hero-item:nth-child(4), .hero-item:nth-child(5){
         display: none;
     }
+    .hero-btn{
+        display: block;
+    }
      .hero-box-text{
         font-size: 58px;
     }
@@ -204,6 +215,9 @@ a:hover{
     }
     .hero-box-navbar-title{
         font-size: 14px;
+    }
+    #hero-select{
+        display: none;
     }
   }
   @media (max-width: 700px) {
@@ -268,7 +282,8 @@ a:hover{
         left: -50px;
     }
     .hero-logo{
-        width: 80px;
+        width: 100px;
+        height: 35px;
     }
     .hero-box{
         height: 180px;

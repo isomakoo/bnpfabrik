@@ -27,6 +27,11 @@
     display: flex;
     justify-content: space-between;
     margin: 0 auto;
+    z-index: -1;
+}
+.tuplamjon{
+  width: 1140px;
+  margin: 0 auto;
 }
 .season-links {
     text-align: center; 
@@ -70,7 +75,34 @@
   .product-nete{
   height: 450px;
   }
+  .tuplam-input {
+    padding: 15px;
+    margin-top: 20px;
+    border-radius: 50px;
+    border: none;
+    outline: none;
+    width: 450px;
+    font-size: 1rem;
+    color: #888;
+    background-color: #dcdcdc;
+    transition: box-shadow 0.3s ease;
+    margin-left: 0 !important;
+   
+  }
+  .product-text{
+    width: 200px !important;
+    padding-left: 0 !important;
+    color: #889a97;
+  }
   @media(max-width: 1100px){
+    .tuplamjon{
+    width: 100%;
+      margin: 0 auto;
+    }
+    .tuplam-input{
+      width: 80%;
+      margin-left: 40px !important;
+    }
     .contact{
       width: 100%;
     }
@@ -88,6 +120,9 @@
     }
     .product-item{
       width: 24%;
+    }
+    .product-text{
+      width: 100% !important;
     }
     .product-image{
       width: 100%;
@@ -121,5 +156,8 @@
   }
   .season-links{
     width: 33% !important;
+  }
+  .product-net{
+    font-size: 18px;
   }
   }
