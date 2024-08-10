@@ -154,7 +154,6 @@ function Hero() {
           />
           <svg
           onClick={openModal}
-           className="hero-btn"
             stroke="currentColor"
             fill="none"
             stroke-width="0"

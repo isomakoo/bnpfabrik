@@ -252,7 +252,7 @@ function Tuplam() {
             {getProducts().length > 0 ? (
               <ul className="tuplam-list">
                 {getProducts().map((product) => (
-                  <li key={`product-${product.id}-${product.season}`} className="product-item" data-aos="fade-up" data-aos-delay="300">
+                  <li key={`product-${product.id+1}-${product.season}`} className="product-item" data-aos="fade-up" data-aos-delay="300">
                     <Link to={`/product/${product.season}/${product.id}`}>
                       <img
                         src={product.img}
