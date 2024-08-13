@@ -82,7 +82,8 @@
   width: 24%;
 }
 #products-image{
-  width: 100%;
+  width: 90%;
+  height: auto;
   border-radius: 20px;
 }
  #product-img:hover{
