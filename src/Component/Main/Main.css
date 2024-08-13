@@ -114,6 +114,36 @@
   margin: 0px !important;
   margin-left: 10px !important;
  }
+ @media (max-width: 1400px){
+  .product-detail{
+    width: 100%;
+    align-items: center;
+  }
+  .image-container{
+    width: 50%;
+    height: auto;
+  }
+  #products-image{
+    border-radius: 20px;
+    width: 100%;
+  }
+  #product-img{
+    width: 100%;
+  }
+  .product-grid{
+    width: 100%;
+    display: flex;
+  }
+  .main-title{
+    width: 100%;
+    font-size: 36px;
+    margin-bottom: 20px;
+    margin: 0 auto;
+  }
+  .product-card{
+    width: 24%;
+  }
+ }
  @media (max-width: 1110px){
   .product-detail{
     width: 100%;
