@@ -72,6 +72,19 @@
   height: 500px;
   overflow: hidden;
 }
+.product-grid{
+  height: auto;
+  width: 1140px;
+  display: flex;
+  justify-content: space-between;
+}
+.product-card{
+  width: 24%;
+}
+#products-image{
+  width: 100%;
+  border-radius: 20px;
+}
  #product-img:hover{
   transform: scale(3); 
   cursor: pointer;
@@ -94,6 +107,11 @@
  }
  #product-image{
   width: 90%;
+ }
+ .product-text{
+  width: 80%;
+  margin: 0px !important;
+  margin-left: 10px !important;
  }
  @media (max-width: 1110px){
   .product-detail{
@@ -136,7 +154,7 @@
    #products-image{
     border-radius: 20px;
     width: 100%;
-    margin-left: 20px;
+    margin-left: 0px !important;
   }
    .product-grid{
     width: 100%;
@@ -147,6 +165,8 @@
     width: 48%;
    }
    .main-title{
+    margin-left: 10px;
+    margin-bottom: 20px;
     font-size: 24px;
    }
  }

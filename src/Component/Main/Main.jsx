@@ -105,9 +105,16 @@ function Main() {
 
             // Find similar products
             const filteredProducts = categoryProducts
-                .filter((item) => item.id !== parseInt(id, 10))
-                .slice(0, 4);
-            setSimilarProducts(filteredProducts);
+                .filter((item) => item.id !== parseInt(id, 10));
+            
+            // Function to get random products
+            const getRandomProducts = (products, count) => {
+                const shuffled = products.sort(() => 0.5 - Math.random());
+                return shuffled.slice(0, count);
+            };
+            
+            const randomProducts = getRandomProducts(filteredProducts, 4);
+            setSimilarProducts(randomProducts);
         } else {
             console.error("Invalid season or id");
         }
@@ -243,22 +250,18 @@ function Main() {
                     </p>
                     <h3 className="main-title">Shunga uxshagan Mahsulotlar</h3>
                     <div className="product-grid">
-                        {similarProducts.length > 0 ? (
-                            similarProducts.map((item) => (
-                                <div key={item.id} className="product-card">
-                                    <Link to={`/product/${season}/${item.id}`}>
-                                        <img
-                                            src={item.img}
-                                            alt={item.alt}
-                                            id="products-image"
-                                        />
-                                        <p className="product-name">{item.name}</p>
-                                    </Link>
-                                </div>
-                            ))
-                        ) : (
-                            <p>{t("no_similar_products")}</p>
-                        )}
+                        {similarProducts.slice(0, 4).map((item) => (
+                            <div key={item.id} className="product-card">
+                                <Link to={`/product/${season}/${item.id}`}>
+                                    <img
+                                        src={item.img}
+                                        alt={item.alt}
+                                        id="products-image"
+                                    />
+                                    <p className="product-text">{item.name}</p>
+                                </Link>
+                            </div>
+                        ))}
                     </div>
                 </div>
                 <ul className="foother-navbar">
@@ -273,7 +276,7 @@ function Main() {
                         <Link to="/" className='foother-linkes'>{t('home')}</Link> <br />
                         <Link to="/about-us" className='foother-linkes'>{t('aboutUs')} </Link> <br />
                         <Link to="/shop" className='foother-linkes'>{t('collection')}</Link> <br />
-                        <Link to="/contact-us" className='foother-linkes'>{t('contact')}</Link>
+                        <Link to="/contact-us" className='foother-linkes'>{t('contacts')}</Link>
                     </li>
                     <li className="foother-nav-item" data-aos="fade-up">
                         <h4 className="foother-nav-item-title">{t('contacts')}</h4>

@@ -276,6 +276,43 @@ function Tuplam() {
         <ul className="foother-navbar">
           {/* Footer items */}
         </ul>
+        <ul className="foother-navbar">
+          <li className="foother-nav-item" data-aos="fade-up">
+            <img src={logo} alt="Logo" className="foother-logo" />
+            <p className="foother-nav-item-text">
+              {t('about')}
+            </p>
+          </li>
+          <li className="foother-nav-item" data-aos="fade-up">
+            <h4 className="foother-nav-item-title">{t('menu')}</h4>
+            <Link to="/" className='foother-linkes'>{t('home')}</Link> <br />
+            <Link to="/about-us" className='foother-linkes'>{t('aboutUs')} </Link> <br />
+            <Link to="/shop" className='foother-linkes'>{t('collection')}</Link> <br />
+            <Link to="/contact-us" className='foother-linkes'>{t('contact')}</Link>
+          </li>
+          <li className="foother-nav-item" data-aos="fade-up">
+            <h4 className="foother-nav-item-title">{t('contacts')}</h4>
+            <p className="foother-item-nav-text">{t('address')}</p>
+            <p className="foother-item-nav-text">{t('email1')}</p>
+            <p className="foother-item-nav-text">{t('social1')}</p>
+            <p className="foother-item-nav-text">{t('email2')}</p>
+            <a href={`tel:${t('phone1')}`} className="foother-nav-link">{t('phone1')}</a> <br />
+            <a href={`tel:${t('phone2')}`} className="foother-nav-link">{t('phone2')}</a>
+          </li>
+          <li className="foother-nav-item" data-aos="fade-up">
+            <h4 className="foother-nav-item-title">{t('subscribe')}</h4>
+            <form className="newsletter-form">
+              <input
+                type="email"
+                placeholder="Elektron pochtangizni kiriting"
+                className="email-input"
+              />
+              <button type="submit" className="subscribe-button">
+                Obuna Bo‘ling
+              </button>
+            </form>
+          </li>
+        </ul>
       </div>
       <div className="foother-foother">
         <p className="foother-foother-text">{t("copyright")}</p>

@@ -94,20 +94,19 @@
   .season-links button:hover {
     background-color: #e0e0e0; 
   }
-  .product-net{
-    width: 100%;
-    background-color: #889a97;
-    border-radius: 10px;
-    border: 1px solid black;
-    height: 40px;
-    color: white;
-    font-weight: 500;
-    font-size: 24px;
+  .product-nete {
+    display: flex;
+    justify-content: center; /* Gorizontal markazlash */
+    align-items: center; /* Vertikal markazlash */
+    height: 100vh; /* Ekran balandligi bo'yicha markazlash uchun */
+  }
+  
+  .product-net {
+    font-size: 1.5rem;
+    color: #333; /* Sizning rangingizni tanlang */
     text-align: center;
   }
-  .product-nete{
-  height: 450px;
-  }
+  
   .tuplam-input {
     padding: 15px;
     margin-top: 20px;
