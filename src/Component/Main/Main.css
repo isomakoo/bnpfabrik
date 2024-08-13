@@ -6,6 +6,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
 .product-detail h1 {
@@ -74,6 +76,25 @@
   transform: scale(3); 
   cursor: pointer;
  }
+ .Link:hover{
+  color: red;
+ }
+ .spane-title{
+  font-size: 20px;
+  font-weight: 700;
+  color: black;
+  width: 100%;
+ }
+ .product-text{
+  margin-left: 10px !important;
+ }
+ .product-names{
+  width: 100% !important;
+  margin-left: 10px;
+ }
+ #product-image{
+  width: 90%;
+ }
  @media (max-width: 1110px){
   .product-detail{
     width: 100%;
@@ -83,8 +104,25 @@
     width: 50%;
     height: auto;
   }
+  #products-image{
+    border-radius: 20px;
+    width: 100%;
+  }
   #product-img{
     width: 100%;
+  }
+  .product-grid{
+    width: 100%;
+    display: flex;
+  }
+  .main-title{
+    width: 100%;
+    font-size: 36px;
+    margin-bottom: 20px;
+    margin: 0 auto;
+  }
+  .product-card{
+    width: 24%;
   }
  }
  @media (max-width: 750px){
@@ -95,4 +133,58 @@
    .image-container{
     width: 90%;
    }
+   #products-image{
+    border-radius: 20px;
+    width: 100%;
+    margin-left: 20px;
+  }
+   .product-grid{
+    width: 100%;
+    flex-wrap: wrap;
+    height: 500px;
+   }
+   .product-card{
+    width: 48%;
+   }
+   .main-title{
+    font-size: 24px;
+   }
  }
+ @media (max-width: 500px){
+  .product-detail{
+   width: 100%;
+   flex-direction: column;
+  }
+  .image-container{
+   width: 90%;
+  }
+  .product-grid{
+   width: 100%;
+   flex-wrap: wrap;
+   height: auto;
+  }
+  .product-table{
+    padding: 0 !important;
+    width: 90% !important;
+  }
+  #products-image{
+    border-radius: 20px;
+    width: 100%;
+    margin-left: 20px;
+  }
+  #product-tbody{
+    width: 300px !important;
+  }
+  .product-name{
+    margin-left: 20px;
+    width: 80%;
+    font-family: Popins;
+    font-size: 18px;
+  }
+  .product-card{
+   width: 90%;
+  }
+  .main-title{
+   font-size: 24px;
+  }
+}

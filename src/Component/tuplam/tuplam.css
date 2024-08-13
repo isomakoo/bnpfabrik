@@ -13,6 +13,29 @@
   max-height: calc(100vh - someOffset);
   overflow-y: auto;
 }
+.tuplam-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.tuplam-input {
+  width: 100%;
+  padding-right: 30px; /* Clear button uchun joy qoldirish */
+}
+
+.clear-btn {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-size: 44px;
+  color: #999; /* Clear button rangini tanlang */
+  z-index: 1;
+}
+
 
 .product-item{
     width: 25%;

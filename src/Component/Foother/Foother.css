@@ -151,6 +151,9 @@
    .foother-item-img{
     height: auto;
    }
+   .foother-item-text, .foother-item-title, .foother-list-text{
+    padding-left: 15px;
+   }
   }
   @media (max-width: 500px) {
   .foother-navbar{
@@ -166,13 +169,32 @@
   }
   .newsletter-form {
     display: flex;
-    gap: 10px; /* Elementlar orasidagi bo'shliqni aniqlash */
-    align-items: center; /* Vertikal markazlashtirish */
-  }
-  
-  .newsletter-form input,
-  .newsletter-form button {
-    flex: 0 1 auto; /* Elementlarning o'lchamlarini moslashtiradi */
-    margin: 0; /* Marginlarni olib tashlash */
-  }
+    flex-direction: column; /* Stack elements vertically */
+    gap: 10px; /* Space between input and button */
+    max-width: 300px; /* Optional: to control the width of the form */
+    margin: 0 auto; /* Optional: to center the form */
+}
+
+.email-input {
+    padding: 10px; /* Space inside the input */
+    border: 1px solid #ccc; /* Border style */
+    border-radius: 20px; /* Rounded corners */
+    width: 100%; /* Full width */
+}
+
+.subscribe-button {
+    padding: 10px; /* Space inside the button */
+    border: none; /* Remove border */
+    border-radius: 20px; /* Rounded corners */
+    background-color: #ff4c4c;/* Button background color */
+    color: #fff; /* Text color */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 16px; /* Font size */
+    width: 100%; /* Full width */
+    text-align: center; /* Center text */
+}
+
+.subscribe-button:hover {
+  background-color: #ff4c4c; /* Darker color on hover */
+}
   }

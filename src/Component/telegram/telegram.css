@@ -3,8 +3,7 @@
     margin: 0 auto; /* Markazlashtiradi */
     position: fixed;
     bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%); /* Elementni haqiqatdan o'rtaga olib kelish uchun */
+    text-align: end;
   }
   
   .telegram-button {

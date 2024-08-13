@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState, useEffect, useCallback, useMemo } from "react";
 import "./tuplam.css";
 import productData from "../Product/product";
 import logo from "../../assets/logo.png";
@@ -8,8 +8,6 @@ import ru from "../../assets/ru.svg";
 import en from "../../assets/en.svg";
 import "../Foother/Foother.css";
 import Group1 from "../../assets/group1.png";
-import AOS from "aos";
-import "aos/dist/aos.css";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import Modal from "../modal/modal";
@@ -65,9 +63,18 @@ function Tuplam() {
   const [searchQuery, setSearchQuery] = useState("");
   const [isModalOpen, setModalOpen] = useState(false);
 
+  // Initialize debounce function
+  const debouncedSearch = useCallback(
+    debounce((query) => setSearchQuery(query), 300),
+    []
+  );
+
   useEffect(() => {
-    AOS.init({ duration: 1000 });
-  }, []);
+    return () => {
+      // Clean up debounce on component unmount
+      debouncedSearch.cancel();
+    };
+  }, [debouncedSearch]);
 
   const handleChange = (selectedOption) => {
     i18n.changeLanguage(selectedOption.value);
@@ -99,17 +106,11 @@ function Tuplam() {
     setSelectedSeason(season);
   };
 
-  // Debounce function for search input
-  const debouncedSearch = useCallback(
-    debounce((query) => setSearchQuery(query), 300),
-    []
-  );
-
   const handleSearchChange = (event) => {
     debouncedSearch(event.target.value.toLowerCase());
   };
 
-  const getProducts = () => {
+  const filteredProducts = useMemo(() => {
     const products = selectedSeason === "All"
       ? Object.keys(extendedProductData).flatMap((season) =>
           extendedProductData[season].map((product) => ({
@@ -122,11 +123,13 @@ function Tuplam() {
           season: selectedSeason,
         }));
 
-    const filteredProducts = products.filter((product) =>
-      product.name.toLowerCase().startsWith(searchQuery)
+    return products.filter((product) =>
+      product.name.toLowerCase().includes(searchQuery)
     );
+  }, [selectedSeason, searchQuery]);
 
-    return filteredProducts;
+  const clearSearch = () => {
+    setSearchQuery('');
   };
 
   const openModal = () => {
@@ -139,31 +142,31 @@ function Tuplam() {
 
   return (
     <>
-      <div className="hero" data-aos="fade-down">
+      <div className="hero">
         <div className="container">
           <div className="hero-list">
             <ul className="hero-navbar">
-              <li className="hero-item" data-aos="fade-right">
+              <li className="hero-item">
                 <a href="/" className="hero-item-link">
                   <img src={logo} alt="logo" className="hero-logo" />
                 </a>
               </li>
-              <li className="hero-item" data-aos="fade-right" data-aos-delay="100">
+              <li className="hero-item">
                 <Link to="/" className="hero-item-link">
                   {t("home")}
                 </Link>
               </li>
-              <li className="hero-item" data-aos="fade-right" data-aos-delay="200">
+              <li className="hero-item">
                 <Link to="/shop" className="hero-item-link">
                   {t("collection")}
                 </Link>
               </li>
-              <li className="hero-item" data-aos="fade-right" data-aos-delay="300">
+              <li className="hero-item">
                 <Link to="/about-us" className="hero-item-link">
                   {t("about_us")}
                 </Link>
               </li>
-              <li className="hero-item" data-aos="fade-right" data-aos-delay="400">
+              <li className="hero-item">
                 <Link to="/" className="hero-item-link">
                   {t("contacts")}
                 </Link>
@@ -180,21 +183,17 @@ function Tuplam() {
               isSearchable={false}
               styles={customStyles}
               id="hero-select"
-              data-aos="fade-left"
             />
             <svg
               onClick={openModal}
-              className="hero-btn"
+              className="open-menu"
               stroke="currentColor"
               fill="none"
-              stroke-width="0"
+              strokeWidth="0"
               viewBox="0 0 24 24"
-              class="open-menu"
               height="1em"
               width="1em"
               xmlns="http://www.w3.org/2000/svg"
-              data-aos="fade-left"
-              data-aos-delay="100"
             >
               <path
                 d="M2 5.99519C2 5.44556 2.44556 5 2.99519 5H11.0048C11.5544 5 12 5.44556 12 5.99519C12 6.54482 11.5544 6.99039 11.0048 6.99039H2.99519C2.44556 6.99039 2 6.54482 2 5.99519Z"
@@ -214,21 +213,26 @@ function Tuplam() {
         </div>
       </div>
       <div className="tuplamjon">
-        <input
-          type="text"
-          placeholder="Search products..."
-          value={searchQuery}
-          onChange={handleSearchChange}
-          className="tuplam-input"
-          data-aos="fade-up"
-        />
-        <div className="contact" data-aos="fade-up" data-aos-delay="100">
+        <div className="tuplam-container">
+          <input
+            type="text"
+            placeholder="Search products..."
+            value={searchQuery}
+            onChange={handleSearchChange}
+            className="tuplam-input"
+          />
+          {searchQuery && (
+            <button className="clear-btn" onClick={clearSearch}>
+              &times; {/* X belgisi */}
+            </button>
+          )}
+        </div>
+        <div className="contact">
           <div className="season-links">
             <h2>{selectedSeason}</h2>
             <button
               onClick={() => handleSeasonClick("All")}
               className={selectedSeason === "All" ? "active" : ""}
-              data-aos="fade-up"
             >
               All
             </button>
@@ -239,8 +243,6 @@ function Tuplam() {
                   key={`season-${season}`}
                   onClick={() => handleSeasonClick(season)}
                   className={selectedSeason === season ? "active" : ""}
-                  data-aos="fade-up"
-                  data-aos-delay={100 + Object.keys(extendedProductData).indexOf(season) * 100}
                 >
                   {season}
                 </button>
@@ -248,11 +250,11 @@ function Tuplam() {
             </div>
             <br />
           </div>
-          <div className="category-container" data-aos="fade-up" data-aos-delay="200">
-            {getProducts().length > 0 ? (
+          <div className="category-container">
+            {filteredProducts.length > 0 ? (
               <ul className="tuplam-list">
-                {getProducts().map((product) => (
-                  <li key={`product-${product.id}-${product.season}`} className="product-item" data-aos="fade-up" data-aos-delay="300">
+                {filteredProducts.map((product) => (
+                  <li key={`product-${product.id}-${product.season}`} className="product-item">
                     <Link to={`/product/${product.season}/${product.id}`}>
                       <img
                         src={product.img}
@@ -265,7 +267,7 @@ function Tuplam() {
                 ))}
               </ul>
             ) : (
-              <div className="product-nete" data-aos="fade-up" data-aos-delay="300">
+              <div className="product-nete">
                 <p className="product-net">Mahsulotlar topilmadi</p>
               </div>
             )}
@@ -275,7 +277,7 @@ function Tuplam() {
           {/* Footer items */}
         </ul>
       </div>
-      <div className="foother-foother" data-aos="fade-up">
+      <div className="foother-foother">
         <p className="foother-foother-text">{t("copyright")}</p>
       </div>
     </>
