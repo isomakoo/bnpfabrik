@@ -37,7 +37,6 @@ function App() {
         <Route path="/about-us" element={<Bizhaqimizda />} /> 
         <Route path='/contact-us' element={<Contakt />} />
       </Routes>
-
       <TelegramButton />
     </>
   );
