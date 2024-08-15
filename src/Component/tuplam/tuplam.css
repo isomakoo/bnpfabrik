@@ -121,8 +121,12 @@
     margin-left: 0 !important;
    
   }
+  .foother-navbar{
+    width: 1140px;
+    margin: 0 auto;
+  }
   .product-text{
-    width: 200px !important;
+    width: 500px !important;
     padding-left: 0 !important;
     color: #889a97;
   }
